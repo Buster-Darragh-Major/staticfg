@@ -257,7 +257,7 @@ class CFGBuilder(ast.NodeVisitor):
             elif type(node) == ast.Str:
                 return node.s
             elif type(node) == ast.Subscript:
-                return node.value.id
+                return node.value.id if node.value.id else ''
             else:
                 return ''
 
